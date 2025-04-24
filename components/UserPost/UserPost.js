@@ -12,6 +12,7 @@ import {
   faHeart,
   faMessage,
 } from '@fortawesome/free-regular-svg-icons';
+import { horizontalScale, verticalScale } from '../../assets/styles/scaling';
 
 const UserPost = props => {
   return (
@@ -20,14 +21,14 @@ const UserPost = props => {
         <View style={style.userDetailsContainer}>
           <UserProfileImage
             profileImage={props.profileImage}
-            imageDimensions={48}
+            imageDimensions={horizontalScale(48)}
           />
 
           <View style={style.userDetails}>
-            <Text style={{marginBottom: 5, flexDirection: 'row'}}>
+            <Text style={{marginBottom: verticalScale(5), flexDirection: 'row'}}>
               {props.firstName} {props.lastName}
             </Text>
-            {props.location && <Text>{props.location}</Text>}
+            {props.location && <Text style={style.location}>{props.location}</Text>}
           </View>
         </View>
         <FontAwesomeIcon icon={faEllipsisH} />
@@ -40,7 +41,7 @@ const UserPost = props => {
           <FontAwesomeIcon
             icon={faHeart}
             color="#79869F"
-            style={{marginLeft: 20}}
+            style={{marginLeft: horizontalScale(20)}}
           />
           <Text style={style.iconText}>{props.likes}</Text>
         </View>
@@ -48,7 +49,7 @@ const UserPost = props => {
           <FontAwesomeIcon
             icon={faMessage}
             color="#79869F"
-            style={{marginLeft: 20}}
+            style={{marginLeft: horizontalScale(20)}}
           />
           <Text style={style.iconText}>{props.likes}</Text>
         </View>
@@ -56,7 +57,7 @@ const UserPost = props => {
           <FontAwesomeIcon
             icon={faBookmark}
             color="#79869F"
-            style={{marginLeft: 20}}
+            style={{marginLeft: horizontalScale(20)}}
           />
           <Text style={style.iconText}>{props.likes}</Text>
         </View>

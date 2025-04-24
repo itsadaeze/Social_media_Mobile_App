@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+import { getFontFamily } from '../../assets/fonts/helper';
+import { horizontalScale, scaleFontSize, verticalScale } from '../../assets/styles/scaling';
 
 const style = StyleSheet.create({
   wrapper: {
@@ -20,12 +22,12 @@ const style = StyleSheet.create({
   userDetails: {
     flexDirection: 'column',
     justifyContent: 'center',
-    marginLeft: 10,
+    marginLeft: horizontalScale(10),
   },
   postImageContainer: {
     alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: verticalScale(10),
+    marginBottom: verticalScale(10),
   },
   IconsWrapper: {
     flexDirection: 'row',
@@ -35,12 +37,17 @@ const style = StyleSheet.create({
   iconsTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: verticalScale(10),
   },
   iconText: {
     color: '#79869F',
-    marginLeft: 3,
+    marginLeft: horizontalScale(3) ,
   },
+  location: {
+    color: '#79869f',
+    fontFamily: getFontFamily('Montserrat', 400),
+    fontSize: scaleFontSize(12),
+    },
 });
 
 export default style;
